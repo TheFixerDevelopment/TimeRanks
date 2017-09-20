@@ -28,7 +28,7 @@ class Rank{
         $this->commands = $commands;
     }
 
-    public function onRankUp(Player $player, bool $removePending = false){
+    public function onRankUp(Player $player, bool $removePending = false) : void{
         if(!$player->isOnline()){
             $this->pending[strtolower($player->getName())] = true;
             return;
