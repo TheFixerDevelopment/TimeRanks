@@ -87,29 +87,29 @@ class TimeRanks extends PluginBase{
         $this->defaultRank = null;
     }
 
-    public function getPurePerms() : PurePerms{
+    public function getPurePerms(){
         return $this->purePerms;
     }
 
-    public function getProvider() : TimeRanksProvider{
+    public function getProvider(){
         return $this->provider;
     }
 
     /**
      * @return Rank[]
      */
-    public function getRanks() : array{
+    public function getRanks(){
         return $this->ranks;
     }
 
-    public function getRank(string $name){
+    public function getRank($name){
         if(isset($this->ranks[$name])){
             return $this->ranks[$name];
         }
         return null;
     }
 
-    public function getDefaultRank() : Rank{
+    public function getDefaultRank(){
         if($this->defaultRank === null){
             foreach($this->ranks as $rank){
                 if($rank->isDefault()){
@@ -121,7 +121,7 @@ class TimeRanks extends PluginBase{
         return $this->defaultRank;
     }
 
-    public function checkRankUp(Player $player, int $before, int $after) : bool{
+    public function checkRankUp(Player $player, $before, $after){
         $old = $this->getRankOnMinute($before);
         $new = $this->getRankOnMinute($after);
         if($old !== $new){
@@ -131,7 +131,7 @@ class TimeRanks extends PluginBase{
         return false;
     }
 
-    public function getRankOnMinute(int $min) : Rank{
+    public function getRankOnMinute($min){
         return $this->ranks[$this->minToRank[$min >= $this->minToRank->getSize() ? $this->minToRank->getSize() - 1 : $min]];
     }
 
