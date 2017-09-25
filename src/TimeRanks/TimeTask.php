@@ -13,7 +13,7 @@ class TimeTask extends PluginTask{
         $this->tr = $tr;
     }
 
-    public function onRun($trick){
+    public function onRun(int $trick){
         foreach($this->tr->getServer()->getOnlinePlayers() as $p){
             $this->tr->getProvider()->setMinutes($p->getName(), $after = ($before = $this->tr->getProvider()->getMinutes($p->getName())) + 1);
             $this->tr->checkRankUp($p, $before, $after);
