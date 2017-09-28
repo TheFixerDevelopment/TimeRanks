@@ -102,7 +102,7 @@ class Main extends PluginBase{
         return array_keys($lowerRanks)[0];
     }
 
-    public function onCommand(CommandSender $sender, Command $command, $label, array $args){
+    public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
         if(strtolower($command->getName()) === "timeranks"){
             $this->command->run($sender, $args);
             return true;
