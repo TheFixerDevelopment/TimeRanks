@@ -11,7 +11,7 @@ class TimeRanksCommand{
         $this->plugin = $plugin;
     }
 
-    public function run(CommandSender $sender, array $args){
+    public function run(CommandSender $sender, array $args) : bool{
         if(!isset($args[0])){
             $sender->sendMessage("TimeRanks plugin by luca28pet");
             $sender->sendMessage("Use /tr check ".($sender instanceof Player ? "[player]" : "<player>"));
