@@ -4,7 +4,7 @@ version: 3.0.0-ALPHA8
 api: [3.0.0-ALPHA8]
 
 load: POSTWORLD
-author: luca28pet
+author: Zeao.
 description: Add easy ranks to your server
 website: https://github.com/luca28pet/TimeRanks
 commands:
