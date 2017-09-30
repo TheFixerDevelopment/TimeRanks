@@ -1,7 +1,7 @@
 name: TimeRanks
 main: TimeRanks\Main
 version: 3.0.0-ALPHA8
-api: [3.0.0-ALPHA8]
+api: [3.0.0-ALPHA8, 3.0.0-ALPHA9, 3.0.0-ALPHA10]
 
 load: POSTWORLD
 author: Zeao.
