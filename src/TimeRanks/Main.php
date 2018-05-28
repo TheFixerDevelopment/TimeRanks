@@ -76,6 +76,7 @@ class Main extends PluginBase{
                         $player->sendMessage("An error occurred during RankUp. Please contact an administrator");
                     }else{
                         $this->getServer()->getPluginManager()->callEvent($ev = new PlayerRankUpEvent($this, $player, $rank, "You are now rank ".$rank));
+                        $this->getServer()->broadcastMessage("§a$player §bhas ranked upto §a$rank");
                         if(!$ev->isCancelled()){
                             $player->sendMessage($ev->getMessage());
                             $this->purePerms->setGroup($player, $PPGroup);
