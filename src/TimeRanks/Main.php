@@ -65,7 +65,7 @@ class Main extends PluginBase{
     }
 
     public function checkRank(Player $player){
-        $playerName = $event->getPlayer();
+        $playerName = $player->getName();
         if(!$player->hasPermission("timeranks.exempt")){
             foreach($this->ranks as $rank => $values){
                 if(isset($values["default"]) and $values["default"] == true){
